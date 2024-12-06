@@ -14,12 +14,10 @@ os.environ['GROQ_API_KEY'] = os.getenv("GROQQ_API_KEY")
 
 ####  Overiview ####
 
-import bs4 #used for extracting information fropm web pages (before passing to the WebBaseLoader)
-from langchain import hub #A framework for building applications powered by language models (LLMs), focusing on modularity and the combination of components such as document loaders, text splitters, embeddings, and vector stores.
-from langchain_text_splitters import RecursiveCharacterTextSplitter #Breaks down long texts into smaller chunks based on recursive rules (e.g., by paragraph, sentence, or character count).
-from langchain_community.document_loaders import WebBaseLoader
-from langchain_community.vectorstores import FAISS
-from langchain_community.vectorstores import StrOutputParser
-from langchain_core.output_parsers import RunnablePassthrough 
-from langchain_groq import ChatGroq
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+from langchain_community.document_loaders import WebBaseLoader #Extracts data from web pages and transforms it into a document format for use in language model workflows.
+from langchain_community.vectorstores import FAISS  #A library for fast nearest-neighbor search on high-dimensional vectors, enabling efficient document retrieval based on semantic similarity.
+from langchain_community.vectorstores import StrOutputParser #Used for converting outputs into plain strings, ensuring a structured and human-readable format.
+from langchain_core.output_parsers import RunnablePassthrough #Passes data through the pipeline without modifications, useful for chaining tasks where no transformation is needed between steps.
+from langchain_groq import ChatGroq #A specialized chat interface for Groq models, allowing interaction with language models for tasks such as answering queries or generating text.
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings #Generates dense vector representations of text using Hugging Face's Bidirectional Generative Embedding (BGE) models, essential for semantic search and similarity tasks.
+
